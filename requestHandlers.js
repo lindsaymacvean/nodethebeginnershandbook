@@ -3,9 +3,13 @@ function start() {
 
 	function sleep(milliSeconds) {
 		var startTime = new Date().getTime();
-		while (new Date().getTime < startTime + milliSeconds);
+		while (true) {
+			var i = new Date().getTime();
+			if (i > startTime + milliSeconds) {
+				return;
+			}
+		}
 	}
-
 	sleep(10000);
 	return "Hello Start";
 }
